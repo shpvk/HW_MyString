@@ -49,21 +49,27 @@ void MyString::MyStrCat(MyString obj)
 
 void MyString::MyDelChr(char ch)
 {
-	char* result_str = new char[strlen(this->str) + 1];
+	int len = strlen(this->str);
+	char* result_str = new char[len + 1];
 
-	for (int i = 0; i < strlen(this->str); ++i)
+
+	int j = 0;
+	for (int i = 0; i < len; ++i)
 	{
 		if (this->str[i] != ch)
 		{
-			result_str[i] = this->str[i];
-		}
-		else
-		{
-			continue;
+			result_str[j++] = this->str[i];
 		}
 	}
+	result_str[j] = '\0';
+
+	delete[] this->str;
 	this->str = result_str;
-	delete[] result_str;
+}
+
+int MyString::MyStrCmp(const MyString& obj)
+{
+	return strcmp(this->str, obj.str);
 }
 
 	int MyString::MyChr(char c)

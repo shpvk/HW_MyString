@@ -17,4 +17,6 @@ int main()
     obj2.Print();
     obj2.MyDelChr('H');
     obj2.Print();
+
+    std::cout << obj1.MyStrCmp(obj2) << std::endl;
 }
