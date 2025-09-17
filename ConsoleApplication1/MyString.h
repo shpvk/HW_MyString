@@ -4,6 +4,13 @@ class MyString
 	char* str;
 	int length;
 public:
+	MyString(MyString&& obj)
+	{
+		str = obj.str;
+		obj.str = nullptr;
+		length = obj.length;
+		obj.length = 0;
+	}
 	MyString();
 	MyString(const MyString& obj);
 	MyString(int size);
