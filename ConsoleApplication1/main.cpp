@@ -21,5 +21,5 @@ int main()
     std::cout << obj1.MyStrCmp(obj2) << std::endl;
 
     MyString obj3 = std::move(obj2);
-    "."
+    "test"
 }
