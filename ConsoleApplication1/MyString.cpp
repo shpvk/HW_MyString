@@ -1,7 +1,10 @@
 #include "MyString.h"
 #include <iostream>
+#include <cstring>
+
 MyString::MyString()
 {
+	objects_counter++;
 	length = 80;
 	str = new char[length] {};
 }
@@ -10,7 +13,7 @@ MyString::MyString(const MyString& obj)
 {
 	length = obj.length;
 	str = new char[length + 1];
-	strcpy_s(str, length + 1, obj.str);
+	strcpy(str, obj.str);
 
 	std::cout << "Copy constructor\n";
 }
@@ -26,7 +29,7 @@ MyString::MyString(const char* st)
 {
 	length = strlen(st);
 	str = new char[length + 1];
-	strcpy_s(str, length + 1, st);
+	strcpy(str, st);
 
 }
 
@@ -44,7 +47,7 @@ int MyString::MyStrlen()
 
 void MyString::MyStrCat(MyString obj)
 {
-	strcat_s(this->str, strlen(obj.str) + strlen(this->str) + 1, obj.str);
+	strcat(this->str, obj.str);
 }
 
 void MyString::MyDelChr(char ch)
@@ -86,7 +89,7 @@ int MyString::MyStrCmp(const MyString& obj)
 
 void MyString::MyStrcpy(MyString& obj)
 {
-	strcpy_s(this->str, strlen(obj.str) + 1, obj.str);
+	strcpy(this->str, obj.str);
 
 }
 

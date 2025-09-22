@@ -27,6 +27,11 @@ public:
 
 	void MyStrcpy(MyString& obj);
 	void Print();
+	
+
+
+	static int objects_counter;
 
 };
 
+//int MyString::objects_counter = 0;
