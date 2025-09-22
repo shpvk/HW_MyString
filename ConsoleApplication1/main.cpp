@@ -3,24 +3,33 @@
 
 int main()
 {
-    MyString obj1("Hello world");
-    obj1.Print();
-    
-    MyString obj2;
-    obj2.MyStrcpy(obj1);
-    obj2.Print();
-    
-    std::cout << obj1.MyChr('H') << std::endl;
-    
-    std::cout << obj2.MyStrlen() << std::endl;
-    obj2.MyStrCat(obj1);
-    obj2.Print();
-    obj2.MyDelChr('H');
-    obj2.Print();
 
-    std::cout << obj1.MyStrCmp(obj2) << std::endl;
+    MyString obj1("asd");
+    MyString obj2("asd");
+    MyString obj3("asd");
+    MyString obj4("asd");
+    
+    // MyString obj1("Hello world");
+    // //obj1.Print();
+    
+    // MyString obj2("Adsa");
+    // MyString obj53("Adsa");
+    // MyString obj54("Adsa");
+    // //obj2.MyStrcpy(obj1);
+    // //obj2.Print();
+    
+    // std::cout << obj1.MyChr('H') << std::endl;
+    
+    // std::cout << obj2.MyStrlen() << std::endl;
+    // obj2.MyStrCat(obj1);
+    // obj2.Print();
+    // obj2.MyDelChr('H');
+    // obj2.Print();
 
-    MyString obj3 = std::move(obj2);
-    //"test"
-    std::cout << "Objects counter: " << MyString::objects_counter;
+    // std::cout << obj1.MyStrCmp(obj2) << std::endl;
+
+    // //MyString obj3 = std::move(obj2);
+    // //"test"
+     std::cout << "Objects counter: " << MyString::objects_counter << std::endl;
+
 }

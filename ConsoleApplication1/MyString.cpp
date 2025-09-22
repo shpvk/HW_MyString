@@ -2,6 +2,9 @@
 #include <iostream>
 #include <cstring>
 
+
+int MyString::objects_counter = 0;
+
 MyString::MyString()
 {
 	objects_counter++;
@@ -9,8 +12,10 @@ MyString::MyString()
 	str = new char[length] {};
 }
 
+
 MyString::MyString(const MyString& obj)
 {
+	objects_counter++;
 	length = obj.length;
 	str = new char[length + 1];
 	strcpy(str, obj.str);
@@ -20,6 +25,7 @@ MyString::MyString(const MyString& obj)
 
 MyString::MyString(int size)
 {
+	objects_counter++;
 	length = size;
 	str = new char[length];
 
@@ -27,6 +33,7 @@ MyString::MyString(int size)
 
 MyString::MyString(const char* st)
 {
+	objects_counter++;
 	length = strlen(st);
 	str = new char[length + 1];
 	strcpy(str, st);

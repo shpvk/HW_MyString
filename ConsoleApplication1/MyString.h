@@ -34,4 +34,5 @@ public:
 
 };
 
+
 //int MyString::objects_counter = 0;
