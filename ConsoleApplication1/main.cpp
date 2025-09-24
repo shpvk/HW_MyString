@@ -9,6 +9,14 @@ int main()
     MyString obj3("asd");
     MyString obj4("asd");
     
+
+    ++obj1;
+    obj1.Print();
+    --obj1;
+    obj1.Print();
+    
+    obj1+=" Hello";
+    obj1.Print();
     // MyString obj1("Hello world");
     // //obj1.Print();
     
@@ -30,6 +38,7 @@ int main()
 
     // //MyString obj3 = std::move(obj2);
     // //"test"
-     std::cout << "Objects counter: " << MyString::objects_counter << std::endl;
+
+    //std::cout << "Objects counter: " << MyString::objects_counter << std::endl;
 
 }

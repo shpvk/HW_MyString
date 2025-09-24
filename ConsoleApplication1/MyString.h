@@ -28,7 +28,10 @@ public:
 	void MyStrcpy(MyString& obj);
 	void Print();
 	
-
+	MyString& operator++ ();
+	MyString& operator-- ();
+	MyString& operator+= (const char* input_str);
+	MyString& operator-= (const char* input_str);
 
 	static int objects_counter;
 

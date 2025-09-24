@@ -3,6 +3,68 @@
 #include <cstring>
 
 
+MyString& MyString::operator-=(const char* input_str)
+{
+	
+}
+
+
+MyString& MyString::operator+=(const char* input_str)
+{
+	unsigned int result_str_size = strlen(str) + strlen(input_str) + 1;
+	char* result_str = new char[result_str_size];
+	for(int i = 0; i < result_str_size; ++i)
+	{
+		result_str[i] = str[i];
+		
+	}
+	unsigned int str_size = strlen(str);
+	for(int i = 0; i < result_str_size; ++i)
+	{
+		result_str[str_size + i] = input_str[i];
+	}
+
+	delete[] str;
+	char* str = new char[result_str_size];
+	strcpy(str, result_str);
+	str[result_str_size] = '\0';
+	delete[] result_str;
+	return *this;
+}
+
+MyString& MyString::operator--()
+{
+	unsigned int result_str_size = strlen(str) - 1;
+	char* result_str = new char[result_str_size];
+	for(int i = 0; i < result_str_size; ++i)
+	{
+		result_str[i] = str[i];
+	}
+
+	delete[] str;
+	char* str = new char[result_str_size];
+	strcpy(str, result_str);
+	str[result_str_size] = '\0';
+	delete[] result_str;
+	return *this;
+}
+
+
+MyString& MyString::operator++()
+{
+	char* result_str = new char[strlen(str)+1];
+	strcpy(result_str, str);
+	result_str[strlen(str)] = '+';
+
+	delete[] str;
+	char* str = new char[strlen(str)+1];
+	strcpy(str, result_str);
+	delete[] result_str;
+
+	return *this;
+
+}
+
 int MyString::objects_counter = 0;
 
 MyString::MyString()
@@ -44,7 +106,7 @@ MyString::~MyString()
 {
 	delete[] str;
 	length = 0;
-	std::cout << "Destructor\n";
+	//std::cout << "Destructor\n";
 }
 
 int MyString::MyStrlen()
