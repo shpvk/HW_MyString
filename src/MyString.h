@@ -1,10 +1,12 @@
 #pragma once
-
+#include <iostream>
 class MyString
 {
 	char* str;
 	int length;
 public:
+
+
 	MyString(MyString&& obj)
 	{
 		str = obj.str;
@@ -37,7 +39,8 @@ public:
 
 	static int objects_counter;
 
+	friend std::ostream& operator<<(std::ostream& os, MyString& obj);
+	friend std::istream& operator>>(std::istream& is, MyString&obj);
+
 };
 
-
-//int MyString::objects_counter = 0;

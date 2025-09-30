@@ -9,6 +9,9 @@
 // }
 
 
+
+
+
 MyString& MyString::operator+=(const char* input_str)
 {
 	unsigned int result_str_size = strlen(str) + strlen(input_str) + 1;
@@ -176,5 +179,23 @@ char MyString::operator[](int index)
 	return '0';
 	//throw std::exception("Index error");
 }
+
+
+	std::ostream& operator<<(std::ostream& os, MyString& obj)
+	{
+		os << "str: " << obj.str << "\t";
+		os << "length: " << obj.length << "\n";
+		return os;
+	}
+
+
+	std::istream& operator>>(std::istream& is, MyString&obj)
+	{
+		is >> obj.str;
+		is >> obj.length;
+		return is;
+	}
+
+
 
 

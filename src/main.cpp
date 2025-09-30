@@ -26,15 +26,8 @@ int main()
         std::cout << str[i] << ' ';
     }
     std::cout << std::endl;
-    int a=51,b=32,c=345;
-    
-    int x = 50;
-    int y = 5555;
-    const int* ptr = &x;
-    ptr = &y;
-    std::cout << *ptr;
-
-
+    std::cin >> obj1;
+    std::cout << obj1;
     // MyString obj1("Hello world");
     // //obj1.Print();
     
