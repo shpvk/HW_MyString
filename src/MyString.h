@@ -18,6 +18,8 @@ public:
 	MyString(const char* st);
 	~MyString();
 
+	char operator[](int index);
+
 	int MyStrlen();
 	void MyStrCat(MyString obj);
 	void MyDelChr(char ch);
@@ -26,12 +28,12 @@ public:
 	int MyChr(char c);
 
 	void MyStrcpy(MyString& obj);
-	void Print();
+	void Print() const;
 	
 	MyString& operator++ ();
 	MyString& operator-- ();
 	MyString& operator+= (const char* input_str);
-	MyString& operator-= (const char* input_str);
+	//MyString& operator-= (const char* input_str);
 
 	static int objects_counter;
 

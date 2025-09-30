@@ -3,10 +3,10 @@
 #include <cstring>
 
 
-MyString& MyString::operator-=(const char* input_str)
-{
+// MyString& MyString::operator-=(const char* input_str)
+// {
 	
-}
+// }
 
 
 MyString& MyString::operator+=(const char* input_str)
@@ -162,7 +162,19 @@ void MyString::MyStrcpy(MyString& obj)
 
 }
 
-void MyString::Print()
+void MyString::Print() const
 {
 	std::cout << str << std::endl;
 }
+
+char MyString::operator[](int index)
+{
+	if(index >= 0 && index < length)
+	{
+		return str[index];
+	}
+	return '0';
+	//throw std::exception("Index error");
+}
+
+
