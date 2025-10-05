@@ -6,6 +6,7 @@ class MyString
 	int length;
 public:
 
+	MyString(std::initializer_list<char> list);
 
 	MyString(MyString&& obj)
 	{

@@ -197,5 +197,17 @@ char MyString::operator[](int index)
 	}
 
 
+	MyString::MyString(std::initializer_list<char> list)
+	{
+		length = (int)list.size();
+		str = new char[length + 1];
 
+		int i = 0;
+		for (auto j = list.begin(); j != list.end(); ++j)
+		{
+			str[i] = *j;
+			++i;
+		}
+		str[length] = '\0';
+	}
 
